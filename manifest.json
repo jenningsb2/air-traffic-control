@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Air Traffic Control",
+  "version": "1.0.0",
+  "description": "Route matching tabs into named groups, automatically.",
+  "permissions": ["storage", "tabs", "tabGroups"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Air Traffic Control"
+  },
+  "options_page": "options.html"
+}

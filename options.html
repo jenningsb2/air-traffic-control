@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Air Traffic Control</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="panel">
+      <header>
+        <div>
+          <h1>Air Traffic Control</h1>
+          <p>Choose where websites open.</p>
+        </div>
+        <button id="addRoute" class="new-route" type="button"><span aria-hidden="true">+</span> New Route</button>
+      </header>
+
+      <section aria-label="Routes">
+        <ol id="routeList" class="route-list"></ol>
+        <div id="emptyState" class="empty-state" hidden>
+          <span>No routes</span>
+          <button class="text-button" data-action="add" type="button">Create one</button>
+        </div>
+      </section>
+
+      <footer>
+        <button id="restoreExamples" class="text-button quiet" type="button">Restore examples</button>
+        <div class="save-area">
+          <span id="saveStatus" class="save-status" role="status" aria-live="polite">All changes saved</span>
+          <button id="saveButton" class="save-button" type="button">Save</button>
+        </div>
+      </footer>
+    </main>
+
+    <template id="routeTemplate">
+      <li class="route-item">
+        <div class="route-body">
+          <div class="route-line condition-line">
+            <select class="condition-select" aria-label="URL condition">
+              <option value="domain">Domain contains</option>
+              <option value="pattern">URL matches</option>
+            </select>
+            <label class="field pattern-field">
+              <span class="sr-only">Domain or match pattern</span>
+              <input class="pattern-input" type="text" spellcheck="false" autocomplete="off" placeholder="example.com">
+              <span class="field-error"></span>
+            </label>
+          </div>
+          <div class="route-line destination-line">
+            <span class="line-label">Open in</span>
+            <div class="field group-picker">
+              <input class="group-input" type="text" maxlength="80" placeholder="Find or create a group"
+                autocomplete="off" role="combobox" aria-label="Destination group" aria-autocomplete="list" aria-expanded="false">
+              <button class="picker-toggle" type="button" tabindex="-1" aria-label="Show groups">⌄</button>
+              <div class="picker-menu" role="listbox" hidden></div>
+              <span class="field-error">Choose a group or create this destination</span>
+            </div>
+          </div>
+        </div>
+        <div class="route-controls">
+          <label class="enabled-control" title="Enable route">
+            <input class="enabled-input" type="checkbox" aria-label="Enable route">
+            <span class="toggle-track" aria-hidden="true"></span>
+          </label>
+          <button class="icon-button move-up" type="button" title="Move up" aria-label="Move route up">↑</button>
+          <button class="icon-button move-down" type="button" title="Move down" aria-label="Move route down">↓</button>
+          <button class="icon-button delete-button" type="button" title="Remove route" aria-label="Remove route">−</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="shared.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
