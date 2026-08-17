@@ -1,7 +1,7 @@
 # Air Traffic Control
 
 <p align="center">
-  <img src="icons/icon128.png" alt="Air Traffic Control icon" width="128">
+  <img src="assets/air-traffic-control-icon.png" alt="Air Traffic Control icon" width="192">
 </p>
 
 A dependency-free Manifest V3 extension that sends websites to named Chromium tab groups. Routes are checked from top to bottom, and the first match wins. Choose an open group from the searchable destination picker, or create a destination name that becomes a tab group on the first matching navigation.
